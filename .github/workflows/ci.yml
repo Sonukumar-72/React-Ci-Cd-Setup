@@ -27,9 +27,10 @@ jobs:
 
       # Run tests
       - name: "Run Tests"
-        run: npm test
+        run: |
+          npm test -- --watchAll=false
         env:
-          CI: true # Ensures proper CI test behavior (e.g., in Create React App)
+          CI: true # Ensures proper CI test behavior (e.g., disables interactive prompts)
 
       # Build the project
       - name: "Build Project"
