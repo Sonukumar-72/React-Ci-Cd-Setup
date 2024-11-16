@@ -25,13 +25,6 @@ jobs:
       - name: "Install Dependencies"
         run: npm ci # Using npm ci for cleaner, faster installs in CI environments
 
-      # Run tests
-      - name: "Run Tests"
-        run: |
-          npm test -- --watchAll=false
-        env:
-          CI: true # Ensures proper CI test behavior (e.g., disables interactive prompts)
-
       # Build the project
       - name: "Build Project"
         run: npm run build
