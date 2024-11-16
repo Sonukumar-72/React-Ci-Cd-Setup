@@ -1,4 +1,5 @@
 name: "Sample React CI Pipeline / Workflow"
+
 on: 
   push:
     branches:
@@ -18,15 +19,17 @@ jobs:
       - name: "Setup Node.js"
         uses: actions/setup-node@v4
         with:
-          node-version: '21'
+          node-version: '16' # Changed to LTS version; Node.js 21 is not stable
 
       # Install dependencies
       - name: "Install Dependencies"
-        run: npm install
+        run: npm ci # Using npm ci for cleaner, faster installs in CI environments
 
       # Run tests
       - name: "Run Tests"
         run: npm test
+        env:
+          CI: true # Ensures proper CI test behavior (e.g., in Create React App)
 
       # Build the project
       - name: "Build Project"
