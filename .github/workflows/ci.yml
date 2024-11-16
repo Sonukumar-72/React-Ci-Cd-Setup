@@ -1,5 +1,4 @@
 name: "Sample React Ci pipeline / workflow"
-
 on: 
       push:
           branches:
