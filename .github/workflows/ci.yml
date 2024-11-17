@@ -29,6 +29,6 @@ jobs:
       - name: "Build Project"
         run: npm run build # Run the build script as defined in package.json
 
-      # Run the project
-      - name: "Start Development Server"
-        run: npm start # Start the project
+      # Run tests
+      - name: "Run Tests"
+        run: npm test -- --watchAll=false # Execute tests without watching
