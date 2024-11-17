@@ -20,7 +20,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '16' # Changed to LTS version; Node.js 21 is not stable
-
+          
+          -name: 'Check node version'
+          run: node --vesion
       # Install dependencies
       - name: "Install Dependencies"
         run: npm ci # Using npm ci for cleaner, faster installs in CI environments
